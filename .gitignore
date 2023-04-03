@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 
 /app/consts.py
+/app/generated_images/

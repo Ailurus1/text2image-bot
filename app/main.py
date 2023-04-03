@@ -2,7 +2,8 @@ from bot import Model, Bot
 from consts import *
 
 def main() -> None:
-    app = Bot(TOKEN, Model())
+    model = Model()
+    app = Bot(TG_TOKEN, model)
     app.run()
 
 if __name__ == "__main__":
