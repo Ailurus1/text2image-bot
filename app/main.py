@@ -1,5 +1,5 @@
 from bot import Model, Bot
-from consts import *
+from tokens import *
 
 
 def main() -> None:

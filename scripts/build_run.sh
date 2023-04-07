@@ -1,3 +1,4 @@
+#!/bin/bash
 cd ..
 docker build \
     --build-arg TG_TOKEN_ARG=$TG_TOKEN \
