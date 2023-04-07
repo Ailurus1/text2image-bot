@@ -128,5 +128,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-/app/consts.py
 /app/generated_images/
+/tokens/
