@@ -17,7 +17,7 @@ docker build \
 docker run text2image-bot:latest
 ```
 
-or in both cases you can simply run `scripts/build_run.sh`
+or you can simply run `scripts/build_run.sh`
 
 ---
 #### Dockerfile Description
