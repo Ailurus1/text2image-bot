@@ -16,37 +16,3 @@ docker build \
 
 docker run text2image-bot:latest
 ```
-
-or you can simply run `scripts/build_run.sh`
-
----
-#### Dockerfile Description
-```
-FROM python:alpine3.17
-```
-
-We use lightweight `Alpine` distribution with Python 3.9 for optimal size of built image.
-
-```
-ARG TG_TOKEN_ARG
-ARG HF_TOKEN_ARG
-
-ENV TG_TOKEN=$TG_TOKEN_ARG
-ENV HF_TOKEN=$HF_TOKEN_ARG
-```
-
-There are two build arguments for Telegram and HuggingFace tokens which then become values of relevant environment variables inside building container.
-
-```
-COPY . .
-
-RUN python3 -m pip install -r requirements.txt
-```
-
-Then we just copy needed files (see `.dockerignore`) of repository inside container and run installation of Python dependencies specified in `requirements.txt`.
-
-```
-CMD [ "python3", "-u", "app/main.py" ]
-```
-
-Finally run `main.py` script to deploy bot inside container with `-u` option to see stdout while running.
