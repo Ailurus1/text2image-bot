@@ -18,4 +18,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          docker pull ailurus1/text2image-bot:latest
           docker run --env TG_TOKEN=${{ secrets.TG_TOKEN }} --env HF_TOKEN=${{ secrets.HF_TOKEN }} text2image-bot:latest
