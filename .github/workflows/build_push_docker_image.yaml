@@ -2,7 +2,7 @@ name: Build and push docker image to DockerHub
 
 on: 
   workflow_call:
-    secerts:
+    secrets:
       DOCKERHUB_USERNAME:
         required: true
       DOCKERHUB_TOKEN:
