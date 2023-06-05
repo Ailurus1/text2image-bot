@@ -130,3 +130,5 @@ dmypy.json
 
 /app/generated_images/
 /tokens/
+
+.env
