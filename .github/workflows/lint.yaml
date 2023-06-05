@@ -1,10 +1,9 @@
 name: Run linter for Python 3
 
 on:
-  push:
-    branches: [ "master" ]
   pull_request:
-    branches: [ "master" ]
+      branches: [ "master" ]
+  workflow_call
 
 jobs:
   build:

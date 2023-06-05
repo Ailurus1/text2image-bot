@@ -1,8 +1,12 @@
 name: Build and push docker image to DockerHub
 
-on:
-  push:
-    branches: [ "master" ]
+on: 
+  workflow_call:
+    secerts:
+      DOCKERHUB_USERNAME:
+        required: true
+      DOCKERHUB_TOKEN:
+        required: true
 
 jobs:
   build:

@@ -1,0 +1,16 @@
+name: Deploy with changes
+
+on:
+  push:
+    branches: [ "master" ]
+
+jobs:
+  lint:
+    uses: ./.github/workflows/lint.yaml
+  build_and_push:
+    uses: ./.github/workflows/build_push_docker_image.yaml
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - run: |
+        docker run --env TG_TOKEN=${{ secrets.TG_TOKEN }} --env HF_TOKEN=${{ secrets.HF_TOKEN }} -it text2image-bot:latest
