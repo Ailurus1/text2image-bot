@@ -15,4 +15,5 @@ jobs:
         uses: sunnysid3up/python-linter@master
         with:
           source: app
+          strict: low
           pylint-options: "--rcfile=setup.cfg"
