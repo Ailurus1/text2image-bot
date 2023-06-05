@@ -16,3 +16,6 @@ Pillow = "9.3.0"
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+extend-exclude = '^/app'
