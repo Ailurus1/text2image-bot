@@ -15,8 +15,8 @@ jobs:
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
   deploy:
     needs: build_and_push
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - run: |
-          docker pull ailurus1/text2image-bot:latest
-          docker run --env TG_TOKEN=${{ secrets.TG_TOKEN }} --env HF_TOKEN=${{ secrets.HF_TOKEN }} ailurus1/text2image-bot:latest
+          docker pull ailurus1/text2image-bot
+          docker run --env TG_TOKEN=${{ secrets.TG_TOKEN }} --env HF_TOKEN=${{ secrets.HF_TOKEN }} ailurus1/text2image-bot
