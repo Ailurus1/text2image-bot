@@ -28,5 +28,3 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/text2image-bot:latest
-
->>>>>>> 602a19e8497a96802f06317e001b159d399c3f36
