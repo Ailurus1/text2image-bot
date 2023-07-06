@@ -29,7 +29,7 @@ class Bot(object):
     ) -> None:
         self.app = ApplicationBuilder().token(token).build()
         self.models = models
-        self.current_model: int = None # idx of chosen model in list of models `self.models`
+        self.current_model = 0 # idx of chosen model in list of models `self.models`
         self.keyboard = []
         
         for idx, model in enumerate(self.models):
