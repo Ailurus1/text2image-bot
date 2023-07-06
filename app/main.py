@@ -1,11 +1,12 @@
-from bot import Model, Bot
-from tokens import *
+from launch import launch_bot
+from utils import get_telegram_token, get_huggingface_token
 
 
 def main() -> None:
-    model = Model(get_huggingface_token())
-    app = Bot(get_telegram_token(), model)
-    app.run()
+    launch_bot(
+        telegram_token=get_telegram_token(), 
+        huggingface_token=get_huggingface_token()
+    )
 
 
 if __name__ == "__main__":
