@@ -1,4 +1,5 @@
 import os
+import time
 
 def get_telegram_token() -> str:
     tg_token = os.getenv("TG_TOKEN", "")
@@ -19,6 +20,11 @@ def get_huggingface_token() -> str:
 
 
 def retry(num_retries: int, wait_time: int):
+    """
+    A decorator for automatic retry
+    when got empty result from HF
+    or when any exception occured
+    """
     def _outer_wrapper(func):
         def _inner_wrapper(*args, **kwargs):
             for _ in range(num_retries):

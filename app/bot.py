@@ -47,6 +47,19 @@ class Bot(object):
             "one of the suggested ones below", 
             reply_markup=reply_markup
         )
+        
+    async def help(
+        self,
+        update: Update,
+        context: ContextTypes.DEFAULT_TYPE
+    ) -> None:
+        reply_markup = InlineKeyboardMarkup(self.keyboard)
+        await update.message.reply_text(
+            "Just write new prompt to get new image\n"
+            "If you want to change model for generating "
+            "pictures just restart a bot",
+            reply_markup=reply_markup
+        )
     
     async def choose_model(
         self,
@@ -95,6 +108,7 @@ class Bot(object):
         Running infinite polling
         """
         self.app.add_handler(CommandHandler("start", self.start))
+        self.app.add_handler(CommandHandler("help", self.help))
         self.app.add_handler(CallbackQueryHandler(self.choose_model))
         self.app.add_handler(
             MessageHandler(
