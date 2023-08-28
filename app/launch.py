@@ -16,8 +16,6 @@ model_api_url = {
 def launch_bot(telegram_token: str, huggingface_token: str) -> None:
     models = []
     for model_name, api_url in model_api_url.items():
-        # print(f"model_name = {model_name}")
-        # print(f"api_url = {api_url}")
         models.append(
             Model(
                 hf_token=huggingface_token, 
